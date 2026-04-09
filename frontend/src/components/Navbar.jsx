@@ -11,7 +11,7 @@ export default function Navbar({ activePage, onNavigate }) {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []);  
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
