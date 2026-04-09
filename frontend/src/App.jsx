@@ -1,14 +1,22 @@
-import './App.css'
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
 
 function App() {
+
+  const [activePage, setActivePage] = useState("Home");
+
   return (
     <>
-      <div className='text-center'>
-        <img src="../public/logo.png" alt="Middlewares" />
-        
-        <h1 className="text-5xl font-extrabold text-red-500">THIS IS MIDDLEWARE </h1>
-        
-      </div>
+      <header>
+        <Navbar activePage={activePage} onNavigate={setActivePage} />
+      </header>
+
+      <main>
+        <section>
+          <HeroSection onNavigate={setActivePage} />
+        </section>
+      </main>
     </>
   )
 }
