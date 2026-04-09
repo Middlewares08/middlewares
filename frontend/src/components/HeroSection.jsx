@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import logo from "../assets/middlware.jpg"; // Update path to your actual logo asset
+import { useState, useEffect } from "react";
+import logo from "../../public/logo.png"; // Update path to your actual logo asset
 
 const TYPEWRITER_PHRASES = [
   "Software Development.",
