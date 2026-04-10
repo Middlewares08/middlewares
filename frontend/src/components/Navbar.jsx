@@ -237,8 +237,7 @@ export default function Navbar({ activePage, onNavigate }) {
             className="mw-desktop-nav"
           >
             {/* Hide on mobile via inline media query workaround using a wrapper */}
-            <div style={{ display: "flex", alignItems: "center", gap: "4px" }}
-              className="hidden md:flex">
+            <div className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link}
@@ -258,8 +257,9 @@ export default function Navbar({ activePage, onNavigate }) {
             </div>
 
             {/* ── Mobile Hamburger ── */}
-            <button
-              className={`mw-hamburger-btn md:hidden${menuOpen ? " open" : ""}`}
+            <div className="md:hidden">
+              <button
+              className={`mw-hamburger-btn ${menuOpen ? " open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
@@ -268,12 +268,14 @@ export default function Navbar({ activePage, onNavigate }) {
               <span className="mw-hamburger-line" />
               <span className="mw-hamburger-line" />
             </button>
+            </div>
+            
           </div>
         </div>
 
         {/* ── Mobile Dropdown Menu ── */}
         <div
-          className={`mw-mobile-menu md:hidden${menuOpen ? " open" : ""}`}
+          className={`mw-mobile-menu  :hidden${menuOpen ? " open" : ""}`}
           style={{
             background: "rgba(4, 14, 24, 0.97)",
             borderTop: "1px solid rgba(0, 229, 255, 0.08)",
